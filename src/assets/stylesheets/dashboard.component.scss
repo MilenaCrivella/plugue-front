@@ -1,0 +1,38 @@
+@import './_colors.scss';
+
+#search {
+    background-color: $main-color;
+    width: 100vw;
+    height: 15vh;
+}
+
+form {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+label {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFF5D6;
+}
+
+input {
+    background: #C67777;
+    border: 2px solid #813B3B;
+    box-sizing: border-box;
+    border-radius: 6px;
+    width: 15vw;
+    height: 3.5vh;
+}
+
+.search-tools {
+    margin-right: 5vh;
+}
