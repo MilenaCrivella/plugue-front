@@ -1,11 +1,12 @@
 @import './_colors.scss';
+
 header {
     background-color: #fff;
-    position: absolute;
+    position: relative;
     width: 100vw;
-    height: 9vh;
-    left: 0px;
+    height: 7vh;
     top: 0px;
+    left: 0px;
     border-bottom: 5px solid $main-color;
 }
 
@@ -14,8 +15,8 @@ header {
     position: absolute;
     display: flex;
     align-items: center;
-    width: 9vh;
-    height: 9.5vh;
+    width: 8vh;
+    height: 7.5vh;
     left: 0px;
     top: 0px;
 }
@@ -23,25 +24,29 @@ header {
 #logo {
     display: block;
     margin: auto;
+    width: 5vh;
 }
 
 #home-menu {
     position: absolute;
     left: 7%;
     color: $main-color;
-    top: 2.25vh
+    top: 1.2vh;
+    width: 4vh;
 }
 
 #idea-menu {
     position: absolute;
     left: 12%;
     color: $main-color;
-    top: 2.25vh
+    top: 1.2vh;
+    width: 4vh;
 }
 
 #logout {
     position: absolute;
-    top: 2.25vh;
+    top: 1.2vh;
     right: 2.25vh;
     color: gray;
+    width: 4vh;
 }
