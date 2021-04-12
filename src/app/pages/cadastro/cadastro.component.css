@@ -48,4 +48,10 @@ input[type=radio] {
 
 .titulo {
     position: left !important;
-}    
+}
+
+body {
+    background: #4F3938 70%;
+    width: 100vw;
+    height: 100vh;
+}
