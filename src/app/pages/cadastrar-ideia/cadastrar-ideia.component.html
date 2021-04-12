@@ -1,16 +1,17 @@
 <div class="cadastrarIdeia">
-    <div>
+    <div class="label">
         <h1>Nova Ideia</h1>
     </div>
     <form class="cadastrarIdeia" action="">
         <div class="tituloIdeia">
             <label for="tituloIdeia">Titulo da ideia</label>
-            <input type="text" class="tituloIdeia" name="tituloIdeia" value="tituloIdeia"/>
+            <input type="text" class="tituloIdeia" id="tituloIdeia"/>
         </div>
 
         <div class="areaInteresse">
-            <label for="areaInteresse">Área de interesse</label>
+            <label for="areaInteresse">Áreas de interesse</label>
             <select class="areaInteresse">
+                <option value="" data-default disabled selected></option>
                 <option value="A">A</option>
                 <option value="B">B</option>
                 <option value="C">C</option>
@@ -19,7 +20,7 @@
         </div>
 
         <div class="descricaoIdeia">
-            <label for="areaInteresse">Área de interesse</label>
+            <label for="descricaoIdeia">Descrição</label><br>
             <textarea class="descricaoIdeia" name="descricaoIdeia" rows="4" cols="50"></textarea>
         </div>
     </form>
