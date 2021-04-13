@@ -8,6 +8,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CadastrarIdeiaComponent } from './pages/cadastrar-ideia/cadastrar-ideia.component';
 import { AtualizarIdeiaComponent } from './pages/atualizar-ideia/atualizar-ideia.component';
+import { IdeiaComponent } from './pages/ideia/ideia.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AtualizarIdeiaComponent } from './pages/atualizar-ideia/atualizar-ideia
     LoginComponent,
     CadastrarIdeiaComponent,
     AtualizarIdeiaComponent,
+    IdeiaComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,211 @@
+div.ideia{
+    position: absolute;
+    width: 814px;
+    height: 488px;
+    left: 117px;
+    top: 178px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+div.label_ideia{
+    position: absolute;
+    width: 500px;
+    height: 100px;
+    left: 43px;
+    top: 10px;
+    font-family: Lato;
+    font-size: 30px;
+    line-height: 58px;
+    color: #4F3938;
+}
+
+button.button_delete{
+    position: absolute;
+    width: 47px;
+    height: 47px;
+    left: 520px;
+    top: 65px;
+    background: rgba(221, 23, 23, 0.1);
+    border-radius: 70px;
+    border: none;
+    outline: none;
+}
+
+button.button_update{
+    position: absolute;
+    width: 47px;
+    height: 47px;
+    left: 580px;
+    top: 65px;
+    background: rgba(94, 131, 146, 0.1);
+    border-radius: 70px;
+    border: none;
+    outline: none;
+}
+
+div.descricao{
+    position: absolute;
+    width: 700px;
+    height: 100px;
+    left: 43px;
+    top: 135px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #4F3938;
+    text-align: justify;  
+}
+
+div.area_interesse{
+    position: absolute;
+    width: 352px;
+    height: 52px;
+    left: 50px;
+    top: 315px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 15px;
+    line-height: 22px;
+    color: #4F3938;
+}
+
+.button_1{
+    position: absolute;
+    width: 103px;
+    height: 27px;
+    left: 0px;
+    top: 65px;
+    background: #B35F5F;
+    border-radius: 10px;
+    border: none;
+    color: #faf9f9;
+    outline: none;
+}
+
+.button_2{
+    position: absolute;
+    width: 103px;
+    height: 27px;
+    left: 115px;
+    top: 65px;
+    background: #4F3938;
+    border-radius: 10px;
+    border: none;
+    color: #faf9f9;
+    outline: none;
+}
+
+.button_3{
+    position: absolute;
+    width: 103px;
+    height: 27px;
+    left: 230px;
+    top: 65px;
+    background: #5E8392;
+    border-radius: 10px;
+    border: none;
+    color: #faf9f9;
+    outline: none;
+}
+
+div.alunos_interesse{
+    position: absolute;
+    width: 360px;
+    height: 488px;
+    left: 955px;
+    top: 176px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+div.label_interesse{
+    position: absolute;
+    width: 397px;
+    height: 100px;
+    left: 35px;
+    top: 34px;
+    font-family: Lato;
+    font-size: 10px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
+
+div.aluno_interesse1{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 35px;
+    top: 50px;
+}
+
+div.aluno_interesse2{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 35px;
+    top: 110px;
+}
+
+div.aluno_interesse3{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 35px;
+    top: 170px;
+}
+
+.foto{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 5px;
+    top: 70px;
+    border: none;
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+.nome{
+    position: absolute;
+    left: 52px;
+    top: 75px;
+    width: 200px;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+    color: #A6ACBE;
+    border: none;
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+.email{
+    position: absolute;
+    left: 52px;
+    top: 90px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+    text-decoration-line: underline;
+    color: #A6ACBE;
+    border: none;
+    background-color: #FFFFFF;
+    outline: none;
+}
