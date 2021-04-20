@@ -1,17 +1,22 @@
 <body>
     <div class="formCadastro">
-        <h1>Crie uma conta</h1>
-        <h3>Tipo de acesso:</h3>
-        <div class=linhaCheckbox>
-            <input id="checkbox" type="radio"/>
-            <label>Aluno</label>
-            <input id="checkbox" type="radio"/>
-            <label>Professor</label>
-        </div>
-        <input class="nome" type="text" placeholder="nome"/>
-        <input class="paginaPessoal" type="text" placeholder="link para página pessoal"/>
-        <input class="email" type="text" placeholder="email"/>
-        <input class="senha" type="text" placeholder="senha"/>
-        <button class="botao" type="submit">Registrar</button>
+        <form [formGroup]="formulario">
+            <div class="titulo">
+                <p>Crie uma conta</p>
+            </div>
+            <div class="subTitulo">
+                <p>Tipo de acesso:</p>
+            </div>
+            <div class="linhaCheckBox">
+                <input id="checkbox" type="radio" [checked]="isAluno" (click)="changeUserType()"/>Aluno
+                <input id="checkbox" type="radio" [checked]="isProfessor" (click)="changeUserType()"/>Professor
+            </div>
+            <input type="text" placeholder="nome" formControlName="nome"/>
+            <input type="text" placeholder="link para página pessoal" formControlName="paginaPessoal" *ngIf="isProfessor"/>
+            <input type="text" placeholder="curso" formControlName="curso" *ngIf="isAluno"/>
+            <input type="text" placeholder="email" formControlName="email"/>
+            <input type="text" placeholder="senha" formControlName="senha"/>
+        </form>
+        <button class="form-control" type="submit" (click)="onSubmit()">Registrar</button>
     </div>
 </body>
