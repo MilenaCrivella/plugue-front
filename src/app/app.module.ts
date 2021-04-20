@@ -6,7 +6,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './pages/login/login.component';
 import { CadastrarIdeiaComponent } from './pages/cadastrar-ideia/cadastrar-ideia.component';
 import { AtualizarIdeiaComponent } from './pages/atualizar-ideia/atualizar-ideia.component';
