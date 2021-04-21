@@ -1,0 +1,136 @@
+.repo_ideias{
+    position: absolute;
+    
+    top: -70px;
+    background: rgba(179, 95, 95, 0.05);
+}
+
+h1{
+    position: absolute;
+    width: 438px;
+    height: 58px;
+    left: 139px;
+    top: 142px;
+    font-family: Lato;
+    font-size: 40px;
+    line-height: 58px;
+    text-align: center;
+    color: #4F3938;
+    font-weight: bolder;
+}
+
+.minha_ideia h2{
+    position: absolute;
+    width: 126px;
+    height: 28px;
+    left: 131px;
+    top: 247px;
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #4F3938;
+    font-weight: bolder;
+}
+
+.minha_ideia div{
+    position: absolute;
+    width: 570.16px;
+    height: 136.83px;
+    
+    background: #FFFFFF;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align:center;
+}
+
+.minha_ideia_1{
+    left: 138px;
+    top: 290px;
+}
+
+.minha_ideia_2{
+    left: 730px;
+    top: 290px;
+}
+
+.minha_ideia_3{
+    left: 138px;
+    top: 450px;
+}
+
+.minha_ideia_4{
+    left: 730px;
+    top: 450px;
+}
+
+h3{
+    font-family: Lato;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #101010;
+}
+
+p{
+    font-family: Lato;
+    font-size: 12px;
+    line-height: 150%;
+    color: #101010;
+}
+
+.mais_info{
+    font-family: Lato;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 150%;
+    text-align: center;
+    color: #ED4C5C;
+    border: none;
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+.ideia_interesse h2{
+    position: absolute;
+    width: 300px;
+    height: 28px;
+    left: 63px;
+    top: 620px;
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #4F3938;
+    font-weight: bolder;
+}
+
+.ideia_interesse div{
+    position: absolute;
+    width: 570.16px;
+    height: 136.83px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align:center;
+}
+
+.inte_ideia_1{
+    left: 136px;
+    top: 665px;
+}
+
+.inte_ideia_2{
+    left: 730px;
+    top: 665px;
+}
+
+.inte_ideia_3{
+    left: 136px;
+    top: 825px;
+}
+
+.inte_ideia_4{
+    left: 730px;
+    top: 825px;
+}

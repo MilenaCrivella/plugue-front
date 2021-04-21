@@ -6,6 +6,7 @@ import { CadastrarIdeiaComponent } from './pages/cadastrar-ideia/cadastrar-ideia
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { IdeiaComponent } from './pages/ideia/ideia.component';
 import { LoginComponent } from './pages/login/login.component';
+import { RepositorioDeIdeiasComponent } from './pages/repositorio-de-ideias/repositorio-de-ideias.component';
 
 const routes: Routes = [
   { path:"home", component: DashboardComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path:"login", component: LoginComponent },
   { path:"cadastrar-ideia", component: CadastrarIdeiaComponent },
   { path:"atualizar-ideia", component: AtualizarIdeiaComponent },
-  { path:"ideia", component: IdeiaComponent }
+  { path:"ideia", component: IdeiaComponent },
+  { path:"repositorio-de-ideias", component: RepositorioDeIdeiasComponent }
 ];
 
 @NgModule({
