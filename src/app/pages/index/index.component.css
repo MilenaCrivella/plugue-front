@@ -1,0 +1,205 @@
+.apresentacao{
+    position: absolute;
+    width: 1519px;
+    height: 724px;
+    left: 0px;
+    top: -2px;
+    background-image: url("/assets/stylesheets/img/plugue.png");
+    background-size: 100% 100%;
+}
+
+.acessar{
+    position: absolute;
+    width: 126px;
+    height: 51px;
+    left: 1253px;
+    top: 40px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: Transparent;
+    outline:none;
+}
+
+.logo{
+    position: absolute;
+    width: 7px;
+    height: 22px;
+    left: 80px;
+    top: 54px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.logo p{
+    padding-left: 13px;
+}
+
+.marca h1{
+    position: absolute;
+    width: 297px;
+    height: 86px;
+    left: 576px;
+    top: 200px;
+    font-family: Lato;
+    font-size: 72px;
+    line-height: 86px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}
+
+.marca h2{
+    position: absolute;
+    width: 555px;
+    height: 32px;
+    left: 448px;
+    top: 315px;
+    font-family: Lato;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.registrar{
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    left: 640px;
+    top: 440px;
+    background: #FFFFFF;
+    color: #B35F5F;
+    border-radius: 6px;
+    font-family: Lato;
+    font-weight: 600;
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+}
+
+.ideia{
+    position: absolute;
+    width: 1519px;
+    height: 420px;
+    left: 0px;
+    top: 722px;
+    background: #FFFFFF;
+}
+
+.descricao{
+    position: absolute;
+    width: 445px;
+    height: 115px;
+    left: 165px;
+    top: 130px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: justify;
+    color: #000000;
+    font-weight: bold;
+}
+
+.imagem{
+    position: absolute;
+    width: 395.06px;
+    height: 276.1px;
+    left: 900px;
+    top: 90px;
+    border-radius: 15px;
+}
+
+.como_funciona{
+    position: absolute;
+    width: 1519px;
+    height: 250px;
+    text-align: center;
+    top: 1142px;
+    background: #FAFAFA;
+}
+
+.como_funciona h2{
+    position: absolute;
+    width: 1110px;
+    height: 55px;
+    left: 165px;
+    top: 20px;
+    font-family: Lato;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+    color: #000000;
+}
+
+.plugue{
+    position: absolute;
+    width: 255px;
+    height: 226px;
+    left: 100px;
+    top: 130px;
+}
+
+.img_plugue{
+    position: absolute;
+    left: 100px;
+    top: 48px;
+}
+
+.encontre{
+    position: absolute;
+    width: 255px;
+    height: 226px;
+    left: 410px;
+    top: 130px;
+}
+
+.img_encontre{
+    position: absolute;
+    left: 100px;
+    top: 48px;
+}
+
+.compartilhe{
+    position: absolute;
+    width: 255px;
+    height: 226px;
+    left: 750px;
+    top: 130px;
+}
+
+.img_compartilhe{
+    position: absolute;
+    left: 105px;
+    top: 48px;
+}
+
+.conect{
+    position: absolute;
+    width: 255px;
+    height: 226px;
+    left: 1080px;
+    top: 130px;
+}
+
+.img_conect{
+    position: absolute;
+    left: 105px;
+    top: 48px;
+}

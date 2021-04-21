@@ -12,6 +12,7 @@ import { CadastrarIdeiaComponent } from './pages/cadastrar-ideia/cadastrar-ideia
 import { AtualizarIdeiaComponent } from './pages/atualizar-ideia/atualizar-ideia.component';
 import { IdeiaComponent } from './pages/ideia/ideia.component';
 import { RepositorioDeIdeiasComponent } from './pages/repositorio-de-ideias/repositorio-de-ideias.component';
+import { IndexComponent } from './pages/index/index.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RepositorioDeIdeiasComponent } from './pages/repositorio-de-ideias/repo
     AtualizarIdeiaComponent,
     IdeiaComponent,
     RepositorioDeIdeiasComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,

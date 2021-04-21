@@ -7,9 +7,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { IdeiaComponent } from './pages/ideia/ideia.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RepositorioDeIdeiasComponent } from './pages/repositorio-de-ideias/repositorio-de-ideias.component';
+import { IndexComponent } from './pages/index/index.component';
 
 const routes: Routes = [
-  { path:"home", component: DashboardComponent },
+  { path:"index", component: IndexComponent },
   { path: "cadastro", component: CadastroComponent },
   { path:"home", component: DashboardComponent },
   { path:"login", component: LoginComponent },
