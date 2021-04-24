@@ -60,32 +60,37 @@ input {
 }
 
 .card {
-    position: absolute;
-    width: 60vw;
-    height: 196px;
-    margin: 5vw 5vw;
+    width: 50vw;
+    margin: 1vw 5vw;
     background: #FFFFFF;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 30px;
 }
 
-.card-title, p {
+.card-title, p, h6 {
     font-family: Lato;
     font-style: normal;
     font-weight: normal;
-    color: $dark-color;
 }
 
 .card-title {
-    width: 148px;
-    height: 29px;
+    margin: 0;
     font-size: 24px;
-    text-align: center;
+    color: $dark-color;
+}
+
+h6 {
+    margin: auto 25px;
+    background-color: $main-color;
+    padding: 3px 21px;
+    border-radius: 10px;
+    color: $yellow
 }
 
 p {
     font-size: 16px;
+    color: $dark-color;
 }
 
 h4 {
@@ -119,4 +124,19 @@ footer {
     right: 0;
 }
 
+ul {
+    list-style-type: none;
+}
 
+#ideas {
+    margin-top: 5vw;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+}

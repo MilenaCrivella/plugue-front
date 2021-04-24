@@ -7,10 +7,11 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 })
 export class DashboardComponent implements OnInit {
   readonly apiURL : string;
-  
+  result : Array<any>;
 
   constructor(private http : HttpClient) {
     this.apiURL = 'https://plugue.herokuapp.com/';
+    this.result = [];
   }
 
   ngOnInit(): void {
@@ -25,7 +26,13 @@ export class DashboardComponent implements OnInit {
       "Content-Type": "application/json"
     });
 
-    return this.http.get(`${this.apiURL}ideia`, { headers }).subscribe(result => console.log("@####", result));
+    return this.http.get(`${this.apiURL}ideia`, { headers }).toPromise().then(ideias => {
+      const objectArray = Object.entries(ideias);
+      objectArray.forEach(([ key, value ]) => {
+        this.result.push(value);
+      })
+      console.log(this.result)
+    });
   }
 
 }
