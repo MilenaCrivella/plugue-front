@@ -10,7 +10,6 @@ import { LoginComponent } from './pages/login/login.component';
 const routes: Routes = [
   { path:"home", component: DashboardComponent },
   { path: "cadastro", component: CadastroComponent },
-  { path:"home", component: DashboardComponent },
   { path:"login", component: LoginComponent },
   { path:"cadastrar-ideia", component: CadastrarIdeiaComponent },
   { path:"atualizar-ideia", component: AtualizarIdeiaComponent },
