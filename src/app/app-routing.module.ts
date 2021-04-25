@@ -6,8 +6,10 @@ import { CadastrarIdeiaComponent } from './pages/cadastrar-ideia/cadastrar-ideia
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { IdeiaComponent } from './pages/ideia/ideia.component';
 import { LoginComponent } from './pages/login/login.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
 
 const routes: Routes = [
+  { path:"", component: HomepageComponent },
   { path:"home", component: DashboardComponent },
   { path: "cadastro", component: CadastroComponent },
   { path:"login", component: LoginComponent },

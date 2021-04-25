@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { Aluno } from 'src/app/shared/aluno/aluno';
 import { Professor } from 'src/app/shared/professor/professor';
 import { ProfessorService } from 'src/app/shared/professor/professor.service';
-import { trigger, state, style, transition, animate } from '@angular/animations'
 import { AlunoService } from 'src/app/shared/aluno/aluno.service';
 
 @Component({

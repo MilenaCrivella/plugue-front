@@ -11,6 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { CadastrarIdeiaComponent } from './pages/cadastrar-ideia/cadastrar-ideia.component';
 import { AtualizarIdeiaComponent } from './pages/atualizar-ideia/atualizar-ideia.component';
 import { IdeiaComponent } from './pages/ideia/ideia.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { IdeiaComponent } from './pages/ideia/ideia.component';
     CadastrarIdeiaComponent,
     AtualizarIdeiaComponent,
     IdeiaComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
