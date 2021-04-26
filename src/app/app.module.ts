@@ -11,7 +11,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { CadastrarIdeiaComponent } from './pages/cadastrar-ideia/cadastrar-ideia.component';
 import { AtualizarIdeiaComponent } from './pages/atualizar-ideia/atualizar-ideia.component';
 import { IdeiaComponent } from './pages/ideia/ideia.component';
-import { HomepageComponent } from './pages/homepage/homepage.component';
+import { RepositorioDeIdeiasComponent } from './pages/repositorio-de-ideias/repositorio-de-ideias.component';
+import { IndexComponent } from './pages/index/index.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
     CadastrarIdeiaComponent,
     AtualizarIdeiaComponent,
     IdeiaComponent,
-    HomepageComponent,
+    RepositorioDeIdeiasComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,16 +6,18 @@ import { CadastrarIdeiaComponent } from './pages/cadastrar-ideia/cadastrar-ideia
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { IdeiaComponent } from './pages/ideia/ideia.component';
 import { LoginComponent } from './pages/login/login.component';
-import { HomepageComponent } from './pages/homepage/homepage.component';
+import { RepositorioDeIdeiasComponent } from './pages/repositorio-de-ideias/repositorio-de-ideias.component';
+import { IndexComponent } from './pages/index/index.component';
 
 const routes: Routes = [
-  { path:"", component: HomepageComponent },
+  { path:"", component: IndexComponent },
   { path:"home", component: DashboardComponent },
   { path: "cadastro", component: CadastroComponent },
   { path:"login", component: LoginComponent },
   { path:"cadastrar-ideia", component: CadastrarIdeiaComponent },
   { path:"atualizar-ideia", component: AtualizarIdeiaComponent },
-  { path:"ideia", component: IdeiaComponent }
+  { path:"ideia", component: IdeiaComponent },
+  { path:"repositorio-de-ideias", component: RepositorioDeIdeiasComponent }
 ];
 
 @NgModule({

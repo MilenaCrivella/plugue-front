@@ -1,9 +1,7 @@
 .formCadastro{
 	position: absolute;
-    width: 841px;
+    width: 70vw;
     height: auto;
-    left: 284px;
-    top: 8%;
     background: #FFFFFF;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -11,6 +9,9 @@
 	flex-direction: column;
 	flex-wrap: nowrap;
 	align-items: center;
+    left: 50%;
+    margin-left: -35vw;
+    top: 2.5vh;
 }
 
 input {
@@ -34,6 +35,23 @@ button {
     border-radius: 6px;
     margin-top: 2%;
     margin-bottom: 3%;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+::placeholder {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 29px;
+    color: rgba(179, 95, 95, 0.6);
+    padding-left: 15px;
 }
 
 input[type=radio] {
@@ -77,10 +95,4 @@ input[type=radio] {
     font-weight: bold;
     font-size: 20px;
     color: #B35F5F;
-}
-
-body {
-    background: #4F3938 70%;
-    width: 100vw;
-    height: 100vh;
 }
