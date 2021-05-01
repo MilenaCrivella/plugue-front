@@ -18,7 +18,7 @@ export class IndexComponent implements OnInit {
   }
 
   clickLogin() {
-    this.displayLogin = true;
+    this.displayLogin = !this.displayLogin;
   }
 
   clickSignUp() {

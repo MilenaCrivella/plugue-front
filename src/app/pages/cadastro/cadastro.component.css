@@ -24,6 +24,12 @@ input {
     border-radius: 6px;
     outline: none;
     margin-left: 10%;
+    padding-left: 15px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #4F3938;
 }
 
 button {
@@ -42,6 +48,12 @@ button {
     line-height: 17px;
     text-transform: uppercase;
     color: #FFFFFF;
+    cursor: pointer;
+}
+
+button:hover {
+    color: #B35F5F;
+    background: #FFFFFF;
 }
 
 ::placeholder {

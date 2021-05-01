@@ -64,6 +64,12 @@ form.form_login{
     border-radius: 6px;
     color: #faf9f9;
     margin-top: 30px;
+    cursor: pointer;
+}
+
+.button_login:hover {
+    color: #B35F5F;
+    background-color: #FFFFFF;
 }
 
 .close-button{
