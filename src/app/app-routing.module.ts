@@ -10,9 +10,9 @@ import { RepositorioDeIdeiasComponent } from './pages/repositorio-de-ideias/repo
 import { IndexComponent } from './pages/index/index.component';
 
 const routes: Routes = [
-  { path:"index", component: IndexComponent },
-  { path: "cadastro", component: CadastroComponent },
+  { path:"", component: IndexComponent },
   { path:"home", component: DashboardComponent },
+  { path: "cadastro", component: CadastroComponent },
   { path:"login", component: LoginComponent },
   { path:"cadastrar-ideia", component: CadastrarIdeiaComponent },
   { path:"atualizar-ideia", component: AtualizarIdeiaComponent },
