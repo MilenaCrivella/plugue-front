@@ -4,6 +4,7 @@ export class Professor {
     paginaPessoal!: String
     contato!: String
     senha!: String
+    tipoUsuario!: String
 
     constructor(json?: Professor) {
         Object.assign(this, json)

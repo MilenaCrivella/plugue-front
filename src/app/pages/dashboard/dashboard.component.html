@@ -1,21 +1,21 @@
 <body>
 	<app-header></app-header>
 	<div id="search">
-		<form>
+		<form [formGroup]="formularioBusca">
 			<div class="search-tools">
 				<label for="title">Título</label><br>
-				<input type="text" id="title" name="title"><br>
+				<input type="text" id="title" name="title" formControlName="titulo"><br>
 			</div>
 			<div class="search-tools">
 				<label for="creator">Criador</label><br>
-				<input type="text" id="creator" name="creator">
+				<input type="text" id="creator" name="creator" formControlName="criador">
 			</div>
 			<div class="search-tools">
 				<label for="area">Areas de Interesse</label><br>
-				<input type="text" id="area" name="area">
+				<input type="text" id="area" name="area" formControlName="area">
 			</div>
 		</form>
-		<button id="btn-search" type="button">Buscar</button>
+		<button id="btn-search" type="button" (click)="busca()">Buscar</button>
 	</div>
 	<div id="ideas">
 		<ul>
