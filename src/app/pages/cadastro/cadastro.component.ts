@@ -50,6 +50,7 @@ export class CadastroComponent implements OnInit {
     this.aluno.curso = this.formulario.get("curso")?.value;
     this.aluno.contato = this.formulario.get("email")?.value;
     this.aluno.senha = this.formulario.get("senha")?.value;
+    this.aluno.tipoUsuario = 'aluno';
     this.alunoService.salvaAluno(this.aluno).subscribe(al => {
       this.returnAluno = new Aluno(al);
       console.log(this.returnAluno);
@@ -61,6 +62,7 @@ export class CadastroComponent implements OnInit {
     this.professor.paginaPessoal = this.formulario.get("paginaPessoal")?.value;
     this.professor.contato = this.formulario.get("email")?.value;
     this.professor.senha = this.formulario.get("senha")?.value;
+    this.professor.tipoUsuario = 'professor';
 
     this.professorService.salvaProfessor(this.professor).subscribe(prof => {
       this.returnProf = new Professor(prof);

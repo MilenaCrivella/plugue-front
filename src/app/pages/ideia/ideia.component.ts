@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { IdeiaService } from 'src/app/shared/ideia/ideia.service';
 
 @Component({
   selector: 'app-ideia',
@@ -14,14 +15,16 @@ export class IdeiaComponent implements OnInit {
   descricao: string;
   areaInteresse: string;
   interessados: Array<any>;
+  criador: number;
 
-  constructor(route: ActivatedRoute, private http : HttpClient) { 
+  constructor(route: ActivatedRoute, private ideiaService: IdeiaService, private router: Router) { 
     this.id = route.snapshot.params.ideiaId;
     this.apiURL = 'https://plugue.herokuapp.com/';
     this.titulo = '';
     this.descricao = '';
     this.areaInteresse = '';
     this.interessados = [];
+    this.criador = 0;
   }
 
   ngOnInit(): void {
@@ -29,14 +32,7 @@ export class IdeiaComponent implements OnInit {
   }
 
   getIdeia() {
-    const headers = new HttpHeaders({
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization, Accept, Accept-Language, X-Authorization",
-      "Content-Type": "application/json"
-    });
-
-    return this.http.get(`${this.apiURL}ideia/${this.id}`, { headers }).toPromise().then(ideia => {
+    this.ideiaService.getIdeia(this.id).then(ideia => {
       const objectArray = Object.entries(ideia);
       objectArray.forEach(([ key, value ]) => {
         console.log(key, value)
@@ -44,7 +40,25 @@ export class IdeiaComponent implements OnInit {
         if(key === 'areaInteresse') this.areaInteresse = value;
         if(key === 'descricao') this.descricao = value;
         if(key === 'alunos' || key === 'professores') this.interessados = value;
+        if(key === 'aluno' || key === 'professor') this.criador = value.id;
       })
     });
   }
+
+  deletarIdeia() {
+    this.ideiaService.deletarIdeia(this.id).then(() => {
+      this.router.navigate(['/repositorio-de-ideias']);
+    })
+  }
+
+  atualizarIdeia() {
+    this.router.navigate([`/atualizar-ideia/${this.id}`,  { 
+      titulo: this.titulo, 
+      descricao: this.descricao, 
+      area: this.areaInteresse,
+      criador: this.criador,
+      interessados: this.interessados
+    }]);
+  }
+
 }

@@ -13,6 +13,7 @@ export class AlunoService {
   ) { }
 
   path: string = 'http://127.0.0.1:8080/aluno';
+  //path: string = 'https://plugue.herokuapp.com/alunoes';
 
   //Headers
   httpOptions = { headers: new HttpHeaders({ "Access-Control-Allow-Origin": "*",

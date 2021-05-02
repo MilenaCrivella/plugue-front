@@ -1,12 +1,10 @@
-export class Aluno {
+export class Usuario {
     id!: Number
-    nome!: String
-    curso!: String
     contato!: String
     senha!: String
     tipoUsuario!: String
 
-    constructor(json?: Aluno) {
+    constructor(json?: Usuario) {
         Object.assign(this, json)
     }
 }

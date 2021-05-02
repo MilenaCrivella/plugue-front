@@ -35,19 +35,21 @@ button.button_delete{
     border: none;
     outline: none;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .button_delete:hover {
     background: rgba(221, 23, 23, 0.3);
 }
 
-button.button_update{
+.button_update{
     width: 47px;
     height: 47px;
     background: rgba(94, 131, 146, 0.1);
     border-radius: 70px;
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .button_update:hover {
@@ -81,30 +83,6 @@ div.area_interesse{
     left: 0px;
     top: 65px;
     background: #B35F5F;
-    border-radius: 10px;
-    border: none;
-    color: #faf9f9;
-    outline: none;
-}
-
-#button_2{
-    width: 103px;
-    height: 27px;
-    left: 115px;
-    top: 65px;
-    background: #4F3938;
-    border-radius: 10px;
-    border: none;
-    color: #faf9f9;
-    outline: none;
-}
-
-#button_3{
-    width: 103px;
-    height: 27px;
-    left: 230px;
-    top: 65px;
-    background: #5E8392;
     border-radius: 10px;
     border: none;
     color: #faf9f9;
