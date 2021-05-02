@@ -12,7 +12,8 @@ export class IdeiaService {
     private httpClient: HttpClient
   ) { }
 
-  path: string = 'http://127.0.0.1:8080/ideia';
+  //path: string = 'http://127.0.0.1:8080/ideia';
+  path: string = 'https://plugue.herokuapp.com/ideia';
 
   //Headers
   httpOptions = { headers: new HttpHeaders({ "Access-Control-Allow-Origin": "*",
