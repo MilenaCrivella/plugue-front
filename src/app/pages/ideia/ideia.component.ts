@@ -39,16 +39,15 @@ export class IdeiaComponent implements OnInit {
         if(key === 'titulo') this.titulo = value;
         if(key === 'areaInteresse') this.areaInteresse = value;
         if(key === 'descricao') this.descricao = value;
-        if(key === 'alunos' || key === 'professores') this.interessados = value;
-        if(key === 'aluno' || key === 'professor') this.criador = value.id;
+        if(key === 'professores') this.interessados = value;
+        if(key === 'aluno') this.criador = value.id;
       })
     });
   }
 
   deletarIdeia() {
-    this.ideiaService.deletarIdeia(this.id).then(() => {
-      this.router.navigate(['/repositorio-de-ideias']);
-    })
+    this.ideiaService.deletarIdeia(this.id);
+    this.router.navigate(['/repositorio-de-ideias']);
   }
 
   atualizarIdeia() {

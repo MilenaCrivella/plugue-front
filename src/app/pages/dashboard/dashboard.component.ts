@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Ideia } from 'src/app/shared/ideia/ideia';
 import { IdeiaService } from 'src/app/shared/ideia/ideia.service';
-import { Observable } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Projeto } from 'src/app/shared/projeto/projeto';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -12,7 +11,13 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class DashboardComponent implements OnInit {
 
-  result!: Array<Ideia>;
+  ideias!: Array<Ideia>;
+  projetos!: Array<Projeto>;
+  tipoUsuario: any = '';
+  idUsuario: any = '';
+  isAluno: boolean = false;
+  isProfessor: boolean = false;
+
   formularioBusca = new FormGroup({
     titulo: new FormControl(''),
     criador: new FormControl(''),
@@ -22,33 +27,47 @@ export class DashboardComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private ideiaService: IdeiaService
-  ) {
-  }
+  ) { }
 
   ngOnInit(): void {
-    const idUsuario = this.route.snapshot.paramMap.get('id');
-    const tipoUsuario = this.route.snapshot.paramMap.get('tipoUsuario');
-    this.listaIdeias();
-    this.result = [];
+    this.idUsuario = this.route.snapshot.paramMap.get('id');
+    this.tipoUsuario = this.route.snapshot.paramMap.get('tipoUsuario');
+    this.checkUserType();
+    this.ideias = [];
+    this.projetos = [];
+  }
+
+  checkUserType() {
+    if (this.tipoUsuario == 'aluno') {
+      this.isAluno = true;
+      this.listaProjetos();
+    } else if (this.tipoUsuario == 'professor') {
+      this.isProfessor = true;
+      this.listaIdeias();
+    }
   }
 
   listaIdeias() {
     this.ideiaService.listarIdeias().subscribe(ideias => {
       ideias.forEach(i => {
-        this.result.push(i)
+        this.ideias.push(i)
       });
     });
   }
 
+  listaProjetos() {
+
+  }
+
   busca() {
-    this.result = [];
+    this.ideias = [];
     this.ideiaService.buscarIdeias(this.formularioBusca.get('titulo')?.value,
       this.formularioBusca.get('area')?.value).then(ideias => {
         const objectArray = Object.entries(ideias);
         objectArray.forEach(([key, value]) => {
-          this.result.push(value);
+          this.ideias.push(value);
         })
-        console.log(this.result)
+        console.log(this.ideias)
       });
   }
 
