@@ -37,6 +37,10 @@ button.button_delete{
     margin-right: 10px;
 }
 
+.button_delete:hover {
+    background: rgba(221, 23, 23, 0.3);
+}
+
 button.button_update{
     width: 47px;
     height: 47px;
@@ -44,6 +48,10 @@ button.button_update{
     border-radius: 70px;
     border: none;
     outline: none;
+}
+
+.button_update:hover {
+    background: rgba(94, 131, 146, 0.3);
 }
 
 p.descricao{
