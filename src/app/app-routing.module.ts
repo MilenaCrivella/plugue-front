@@ -11,6 +11,7 @@ import { IndexComponent } from './pages/index/index.component';
 import { CadastrarProjetoComponent } from './pages/cadastrar-projeto/cadastrar-projeto.component';
 import { ProjetoComponent } from './pages/projeto/projeto.component';
 import { AtualizarProjetoComponent } from './pages/atualizar-projeto/atualizar-projeto.component';
+import { RepositorioDeProjetosComponent } from './pages/repositorio-de-projetos/repositorio-de-projetos.component';
 
 const routes: Routes = [
   { path:"", component: IndexComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path:"repositorio-de-ideias", component: RepositorioDeIdeiasComponent },
   { path:"cadastrar-projeto", component: CadastrarProjetoComponent },
   { path:"projeto/:projetoId", component: ProjetoComponent },
-  { path:"atualizar-projeto/:projetoId", component: AtualizarProjetoComponent }
+  { path:"atualizar-projeto/:projetoId", component: AtualizarProjetoComponent },
+  { path:"repositorio-de-projetos", component: RepositorioDeProjetosComponent },
 ];
 
 @NgModule({
