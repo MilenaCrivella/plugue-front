@@ -12,8 +12,8 @@ export class IdeiaService {
     private httpClient: HttpClient
   ) { }
 
-  path: string = 'http://127.0.0.1:8080/ideia';
-  //path: string = 'https://plugue.herokuapp.com/ideia';
+  // path: string = 'http://127.0.0.1:8080/ideia';
+  path: string = 'https://plugue.herokuapp.com/ideia';
   result!: Array<Ideia>
 
   //Headers
@@ -63,4 +63,30 @@ export class IdeiaService {
       }
     );
   }
+
+  getIdeia(id: String) {
+    const headers = this.httpOptions.headers;
+    return this.httpClient.get(`${this.path}/${id}`, { headers }).toPromise();
+  }
+
+  deletarIdeia(id: String) {
+    const headers = this.httpOptions.headers;
+    return this.httpClient.delete(`${this.path}/${id}`, { headers }).toPromise();
+  }
+
+  atualizarIdeia(id: String, ideia: Ideia) {
+    const headers = this.httpOptions.headers;
+    return this.httpClient.put(`${this.path}/${id}`, ideia, { headers }).subscribe(
+      val => {
+        console.log("PUT call successful value returned in body", val);
+      },
+      response => {
+        console.log("PUT call in error", response);
+      },
+      () => {
+        console.log("The PUT observable is now completed.");
+      }
+    );
+  }
+  
 }

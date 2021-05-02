@@ -15,8 +15,8 @@ const routes: Routes = [
   { path: "cadastro", component: CadastroComponent },
   { path:"login", component: LoginComponent },
   { path:"cadastrar-ideia", component: CadastrarIdeiaComponent },
-  { path:"atualizar-ideia", component: AtualizarIdeiaComponent },
-  { path:"ideia", component: IdeiaComponent },
+  { path:"atualizar-ideia/:ideiaId", component: AtualizarIdeiaComponent },
+  { path:"ideia/:ideiaId", component: IdeiaComponent },
   { path:"repositorio-de-ideias", component: RepositorioDeIdeiasComponent }
 ];
 
