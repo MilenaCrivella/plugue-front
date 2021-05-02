@@ -1,7 +1,8 @@
+<app-header></app-header>
 <div class="repo_ideias">
     <div class="titulo">
         <h1 class="titulo">Repositório de ideias</h1>
-        <button class="add_ideia" type="submit">+ &nbsp; Adicionar ideia</button>
+        <button class="add_ideia" type="submit" onclick="location.href='../cadastrar-ideia/'">+ &nbsp;&nbsp;&nbsp; Adicionar ideia</button>
     </div>
     
 
@@ -12,8 +13,8 @@
             <li *ngFor="let res of result">                
                 <div class="card">                    
                     <h1 class="card-title">{{ res.titulo }}</h1>                          
-                    <p>{{ res.descricao }}</p>                        
-                    <button class="mais_info" type="button">Mais informações</button>                        
+                    <p>{{ res.descricao }}</p>  
+                    <a class="mais_info" routerLink='../ideia/{{res.id}}'>Mais informações</a>                      
                 </div>
             </li>
         </ul>
@@ -31,7 +32,7 @@
                     <p>
                         {{ res.descricao }}
                     </p>                        
-                    <button class="mais_info" type="button">Mais informações</button>                        
+                    <a class="mais_info" routerLink='../ideia/{{res.id}}'>Mais informações</a>                         
                 </div>
             </li>
         </ul>   

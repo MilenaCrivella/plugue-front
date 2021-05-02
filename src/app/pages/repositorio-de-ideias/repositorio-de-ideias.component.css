@@ -1,4 +1,6 @@
 .repo_ideias{    
+    position: relative;
+    top: -25px;
     background: rgba(179, 95, 95, 0.05);
 }
 
@@ -99,7 +101,7 @@ p {
     text-overflow: ellipsis;
 }
 
-.mais_info{
+a.mais_info{
     font-family: Lato;
     font-weight: bold;
     font-size: 12px;
