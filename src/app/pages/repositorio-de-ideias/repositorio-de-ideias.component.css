@@ -6,13 +6,12 @@
 
 div.titulo{
     position: relative;
-    height: 200px;
+    height: 120px;
 }
 
 h1.titulo{
     position: relative;
     width: 438px;
-    height: 58px;
     left: 99px;
     top: 80px;
     font-family: Lato;
@@ -112,4 +111,5 @@ a.mais_info{
     background-color: #FFFFFF;
     outline: none;
     top: 40px;
+    text-decoration: none;
 }
