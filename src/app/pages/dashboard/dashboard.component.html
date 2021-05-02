@@ -17,26 +17,45 @@
 		</form>
 		<button id="btn-search" type="button" (click)="busca()">Buscar</button>
 	</div>
-	<div id="ideas">
+	<div id="ideas" *ngIf="isProfessor">
 		<ul>
-			<li *ngFor="let res of result">
+			<li *ngFor="let i of ideias">
 				<div class="card">
 					<header>
-						<h1 class="card-title">{{ res.titulo }}</h1>
-						<h6> {{ res.areaInteresse }} </h6>
+						<h1 class="card-title">{{ i.titulo }}</h1>
+						<h6> {{ i.areaInteresse }} </h6>
 					</header>
 					<p>
-						{{ res.descricao }}
+						{{ i.descricao }}
 					</p>
 					<footer>
 						<img src="../../../assets/images/Avatar.png">
-						<h4>{{ res.aluno.nome }}</h4>
+						<h4>{{ i.aluno.nome }}</h4>
 						<button id="btn-interest" type="button">Candidatar-se</button>
 					</footer>
 				</div>
 			</li>
 		</ul>
 	</div>
+
+	<!--div id="projetos" *ngIf="isAluno">
+		<ul>
+			<li *ngFor= "let p of projetos">
+				<div class="card">
+					<header>
+						<h1 class="card-title">{{ p.titulo }}</h1>
+						<h6> {{ p.areaInteresse }} </h6>
+					</header>
+					<p>
+						{{ p.descricao }}
+					</p>
+					<footer>
+						<img src="../../../assets/images/Avatar.png">
+						<h4>{{ p.aluno.nome }}</h4>
+						<button id="btn-interest" type="button">Candidatar-se</button>
+					</footer>
+				</div>
+			</li>
+		</ul>
+	</div-->
 </body>
-
-
