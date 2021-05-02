@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Ideia } from 'src/app/shared/ideia/ideia';
 import { IdeiaService } from 'src/app/shared/ideia/ideia.service';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -11,14 +12,17 @@ import { Observable } from 'rxjs';
 })
 export class DashboardComponent implements OnInit {
 
-  //readonly apiURL : string;
   result!: Array<Ideia>;
+  formularioBusca = new FormGroup({
+    titulo: new FormControl(''),
+    criador: new FormControl(''),
+    area: new FormControl('')
+  })
 
   constructor(
-    private http : HttpClient,
     private route: ActivatedRoute,
     private ideiaService: IdeiaService
-    ) {
+  ) {
   }
 
   ngOnInit(): void {
@@ -34,6 +38,18 @@ export class DashboardComponent implements OnInit {
         this.result.push(i)
       });
     });
+  }
+
+  busca() {
+    this.result = [];
+    this.ideiaService.buscarIdeias(this.formularioBusca.get('titulo')?.value,
+      this.formularioBusca.get('area')?.value).then(ideias => {
+        const objectArray = Object.entries(ideias);
+        objectArray.forEach(([key, value]) => {
+          this.result.push(value);
+        })
+        console.log(this.result)
+      });
   }
 
 }

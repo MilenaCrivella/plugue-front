@@ -37,35 +37,19 @@ export class IdeiaService {
 
   //Busca ideias por parâmetros
   buscarIdeias(titulo: string, area: string) {
-    const headers = new HttpHeaders({
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization, Accept, Accept-Language, X-Authorization",
-      "Content-Type": "application/json"
-    });
+    const headers = this.httpOptions.headers
 
     let params = new HttpParams();
-    if (titulo) params.set('titulo', titulo);
-    if (area) params.set('area', area);
+    if (titulo) params = params.append('titulo', titulo);
+    if (area) params = params.append('areaInteresse', area);
+    console.log(params);
 
-
-    return this.httpClient.get(`${this.path}`, { headers, params }).toPromise().then(ideias => {
-      const objectArray = Object.entries(ideias);
-      objectArray.forEach(([key, value]) => {
-        this.result.push(value);
-      })
-      console.log(this.result)
-    });
+    return this.httpClient.get(`${this.path}`, { headers, params }).toPromise()
   }
 
   // Interessar por ideia
   applyIdea() {
-    const headers = new HttpHeaders({
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
-      "Access-Control-Allow-Headers": "Content-Type, Authorization, Accept, Accept-Language, X-Authorization",
-      "Content-Type": "application/json"
-    });
+    const headers = this.httpOptions.headers
 
     this.httpClient.put(`${this.path}/${"teste"}/ideia/${"38"}`, {}, { headers }).subscribe(
       val => {
