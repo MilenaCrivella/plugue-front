@@ -29,4 +29,17 @@ export class ProfessorService {
     return this.httpClient.post<Professor>(this.path, JSON.stringify(professor), this.httpOptions);
   }
 
+  applyIdea(idProfessor: Number, idIdeia: Number) {
+    this.httpClient.put(`${this.path}/${idProfessor}/ideia/${idIdeia}`, {}, this.httpOptions).subscribe(
+      val => {
+          console.log("PUT call successful value returned in body", val);
+      },
+      response => {
+          console.log("PUT call in error", response);
+      },
+      () => {
+          console.log("The PUT observable is now completed.");
+      }
+  );
+  }
 }

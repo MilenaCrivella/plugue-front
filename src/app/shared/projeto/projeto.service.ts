@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Projeto } from './projeto';
@@ -12,10 +12,10 @@ export class ProjetoService {
     private httpClient: HttpClient
   ) { }
 
-  // path: string = 'http://127.0.0.1:8080/ideia';
+  // path: string = 'http://127.0.0.1:8080/projeto';
   path: string = 'https://plugue.herokuapp.com/projeto';
+  result!: Array<Projeto>
 
-  //Headers
   httpOptions = {
     headers: new HttpHeaders({
       "Access-Control-Allow-Origin": "*",
@@ -25,6 +25,22 @@ export class ProjetoService {
     })
   };
 
+  listarProjetos() {
+    const headers = this.httpOptions.headers;
+    return this.httpClient.get(`${this.path}`, { headers }).toPromise();
+  }
+
+  buscarProjetos(titulo: string, area: string) {
+    const headers = this.httpOptions.headers
+
+    let params = new HttpParams();
+    if (titulo) params = params.append('titulo', titulo);
+    if (area) params = params.append('areaInteresse', area);
+    console.log(params);
+
+    return this.httpClient.get(`${this.path}`, { headers, params }).toPromise()
+  }
+  
   salvaProjeto(projeto: Projeto): Observable<Projeto> {
     return this.httpClient.post<Projeto>(this.path, projeto, this.httpOptions);
   }

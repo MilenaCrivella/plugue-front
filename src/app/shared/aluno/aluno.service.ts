@@ -24,4 +24,18 @@ export class AlunoService {
   salvaAluno(aluno: Aluno): Observable<Aluno> {
     return this.httpClient.post<Aluno>(this.path, JSON.stringify(aluno), this.httpOptions);
   }
+
+  applyIdea(idAluno: Number, idIdeia: Number) {
+    this.httpClient.put(`${this.path}/${idAluno}/projeto/${idIdeia}`, {}, this.httpOptions).subscribe(
+      val => {
+          console.log("PUT call successful value returned in body", val);
+      },
+      response => {
+          console.log("PUT call in error", response);
+      },
+      () => {
+          console.log("The PUT observable is now completed.");
+      }
+  );
+  }
 }

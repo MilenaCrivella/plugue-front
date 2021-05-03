@@ -7,15 +7,11 @@
 				<input type="text" id="title" name="title" formControlName="titulo"><br>
 			</div>
 			<div class="search-tools">
-				<label for="creator">Criador</label><br>
-				<input type="text" id="creator" name="creator" formControlName="criador">
-			</div>
-			<div class="search-tools">
 				<label for="area">Areas de Interesse</label><br>
 				<input type="text" id="area" name="area" formControlName="area">
 			</div>
 		</form>
-		<button id="btn-search" type="button" (click)="busca()">Buscar</button>
+		<button id="btn-search" type="button" (click)="buscaPorParametros()">Buscar</button>
 	</div>
 	<div id="ideas" *ngIf="isProfessor">
 		<ul>
@@ -29,16 +25,16 @@
 						{{ i.descricao }}
 					</p>
 					<footer>
-						<img src="../../../assets/images/Avatar.png">
+						<img src="./../../../assets/stylesheets/img/avatar3.png">
 						<h4>{{ i.aluno.nome }}</h4>
-						<button id="btn-interest" type="button">Candidatar-se</button>
+						<button id="btn-interest" type="button" (click)="interessaIdeia(i.id)">Candidatar-se</button>
 					</footer>
 				</div>
 			</li>
 		</ul>
 	</div>
 
-	<!--div id="projetos" *ngIf="isAluno">
+	<div id="projetos" *ngIf="isAluno">
 		<ul>
 			<li *ngFor= "let p of projetos">
 				<div class="card">
@@ -50,12 +46,12 @@
 						{{ p.descricao }}
 					</p>
 					<footer>
-						<img src="../../../assets/images/Avatar.png">
-						<h4>{{ p.aluno.nome }}</h4>
-						<button id="btn-interest" type="button">Candidatar-se</button>
+						<img src="./../../../assets/stylesheets/img/avatar3.png">
+						<h4>{{ p.professor.nome }}</h4>
+						<button id="btn-interest" type="button" (click)="interessaProjeto(p.id)">Candidatar-se</button>
 					</footer>
 				</div>
 			</li>
 		</ul>
-	</div-->
+	</div>
 </body>
