@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Aluno } from 'src/app/shared/aluno/aluno';
-import { Ideia } from 'src/app/shared/ideia/ideia';
+import { Ideia } from '../../shared/ideia/ideia';
 import { IdeiaService } from 'src/app/shared/ideia/ideia.service';
 
 @Component({

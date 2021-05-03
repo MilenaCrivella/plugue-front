@@ -5,6 +5,8 @@ import { IdeiaService } from 'src/app/shared/ideia/ideia.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Projeto } from 'src/app/shared/projeto/projeto';
 import { ProjetoService } from 'src/app/shared/projeto/projeto.service';
+import { ProfessorService } from 'src/app/shared/professor/professor.service';
+import { AlunoService } from 'src/app/shared/aluno/aluno.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -28,12 +30,15 @@ export class DashboardComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private ideiaService: IdeiaService,
-    private projetoService: ProjetoService
-  ) { }
-
-  ngOnInit(): void {
+    private projetoService: ProjetoService,
+    private professorService: ProfessorService,
+    private alunoService: AlunoService
+  ) {
     this.idUsuario = this.route.snapshot.paramMap.get('id');
     this.tipoUsuario = this.route.snapshot.paramMap.get('tipoUsuario');
+   }
+
+  ngOnInit(): void {
     this.checkUserType();
     this.ideias = [];
     this.projetos = [];
@@ -96,4 +101,11 @@ export class DashboardComponent implements OnInit {
       });
   }
 
+  interessaIdeia(idIdeia: Number) {
+    this.professorService.applyIdea(this.idUsuario, idIdeia);
+  }
+
+  interessaProjeto(idProjeto: Number) {
+    this.alunoService.applyIdea(this.idUsuario, idProjeto);
+  }
 }

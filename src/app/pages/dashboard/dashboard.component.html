@@ -7,10 +7,6 @@
 				<input type="text" id="title" name="title" formControlName="titulo"><br>
 			</div>
 			<div class="search-tools">
-				<label for="creator">Criador</label><br>
-				<input type="text" id="creator" name="creator" formControlName="criador">
-			</div>
-			<div class="search-tools">
 				<label for="area">Areas de Interesse</label><br>
 				<input type="text" id="area" name="area" formControlName="area">
 			</div>
@@ -29,9 +25,9 @@
 						{{ i.descricao }}
 					</p>
 					<footer>
-						<img src="../../../assets/images/Avatar.png">
+						<img src="./../../../assets/stylesheets/img/avatar3.png">
 						<h4>{{ i.aluno.nome }}</h4>
-						<button id="btn-interest" type="button">Candidatar-se</button>
+						<button id="btn-interest" type="button" (click)="interessaIdeia(i.id)">Candidatar-se</button>
 					</footer>
 				</div>
 			</li>
@@ -50,9 +46,9 @@
 						{{ p.descricao }}
 					</p>
 					<footer>
-						<img src="../../../assets/images/Avatar.png">
+						<img src="./../../../assets/stylesheets/img/avatar3.png">
 						<h4>{{ p.professor.nome }}</h4>
-						<button id="btn-interest" type="button">Candidatar-se</button>
+						<button id="btn-interest" type="button" (click)="interessaProjeto(p.id)">Candidatar-se</button>
 					</footer>
 				</div>
 			</li>
