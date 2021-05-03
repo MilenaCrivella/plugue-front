@@ -1,4 +1,4 @@
-div.atualizarIdeia{
+div.atualizarProjeto{
     width: 90vw;
     height: auto;
     background: #FFFFFF;
@@ -25,7 +25,7 @@ label{
     margin-bottom: 14px;
 }
 
-input.tituloIdeia{
+input.tituloProjeto{
     display: block;
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid rgba(179, 95, 95, 0.2);
@@ -57,7 +57,7 @@ div.areaInteresse {
     margin-top: 60px;
 }
 
-textarea.descricaoIdeia{
+textarea.descricaoProjeto{
     display: block;
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid rgba(179, 95, 95, 0.2);

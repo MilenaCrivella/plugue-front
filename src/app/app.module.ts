@@ -13,6 +13,9 @@ import { AtualizarIdeiaComponent } from './pages/atualizar-ideia/atualizar-ideia
 import { IdeiaComponent } from './pages/ideia/ideia.component';
 import { RepositorioDeIdeiasComponent } from './pages/repositorio-de-ideias/repositorio-de-ideias.component';
 import { IndexComponent } from './pages/index/index.component';
+import { CadastrarProjetoComponent } from './pages/cadastrar-projeto/cadastrar-projeto.component';
+import { ProjetoComponent } from './pages/projeto/projeto.component';
+import { AtualizarProjetoComponent } from './pages/atualizar-projeto/atualizar-projeto.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { IndexComponent } from './pages/index/index.component';
     IdeiaComponent,
     RepositorioDeIdeiasComponent,
     IndexComponent,
+    CadastrarProjetoComponent,
+    ProjetoComponent,
+    AtualizarProjetoComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,9 @@ import { IdeiaComponent } from './pages/ideia/ideia.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RepositorioDeIdeiasComponent } from './pages/repositorio-de-ideias/repositorio-de-ideias.component';
 import { IndexComponent } from './pages/index/index.component';
+import { CadastrarProjetoComponent } from './pages/cadastrar-projeto/cadastrar-projeto.component';
+import { ProjetoComponent } from './pages/projeto/projeto.component';
+import { AtualizarProjetoComponent } from './pages/atualizar-projeto/atualizar-projeto.component';
 
 const routes: Routes = [
   { path:"", component: IndexComponent },
@@ -15,9 +18,12 @@ const routes: Routes = [
   { path: "cadastro", component: CadastroComponent },
   { path:"login", component: LoginComponent },
   { path:"cadastrar-ideia", component: CadastrarIdeiaComponent },
-  { path:"atualizar-ideia", component: AtualizarIdeiaComponent },
-  { path:"ideia", component: IdeiaComponent },
-  { path:"repositorio-de-ideias", component: RepositorioDeIdeiasComponent }
+  { path:"atualizar-ideia/:ideiaId", component: AtualizarIdeiaComponent },
+  { path:"ideia/:ideiaId", component: IdeiaComponent },
+  { path:"repositorio-de-ideias", component: RepositorioDeIdeiasComponent },
+  { path:"cadastrar-projeto", component: CadastrarProjetoComponent },
+  { path:"projeto/:projetoId", component: ProjetoComponent },
+  { path:"atualizar-projeto/:projetoId", component: AtualizarProjetoComponent }
 ];
 
 @NgModule({

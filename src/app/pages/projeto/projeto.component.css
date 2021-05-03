@@ -1,4 +1,4 @@
-div.ideia{
+div.projeto{
     width: 60vw;
     height: 75vh;
     background: #FFFFFF;
@@ -7,7 +7,7 @@ div.ideia{
     margin-right: 5vw;
 }
 
-.label_ideia{
+.label_projeto{
     font-family: Lato;
     font-style: normal;
     font-weight: normal;
@@ -93,7 +93,7 @@ div.area_interesse{
     margin-right: 10px;
 }
 
-div.alunos_interesse{
+div.professores_interesse{
     width: 25vw;
     height: 75vh;
     background: #FFFFFF;
@@ -118,7 +118,7 @@ div.alunos_interesse{
     outline: none;
 }
 
-#idea_infos {
+#projeto_infos {
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -128,7 +128,7 @@ div.alunos_interesse{
     margin-top: 8vh;
 }
 
-.aluno_interesse {
+.professor_interesse {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap-reverse;
@@ -138,7 +138,7 @@ div.alunos_interesse{
     margin-left: 33px;
 }
 
-#nome_aluno, #email_aluno{
+#nome_professor, #email_professor{
     font-family: Lato;
     font-style: normal;
     font-weight: 500;
@@ -150,11 +150,11 @@ div.alunos_interesse{
     margin: 0;
 }
 
-#nome_aluno {
+#nome_professor {
     font-size: 14px;
 }
 
-#email_aluno {
+#email_professor {
     text-decoration-line: underline;
     font-size: 12px;
 }

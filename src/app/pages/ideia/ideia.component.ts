@@ -1,4 +1,7 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { IdeiaService } from 'src/app/shared/ideia/ideia.service';
 
 @Component({
   selector: 'app-ideia',
@@ -6,10 +9,55 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ideia.component.css']
 })
 export class IdeiaComponent implements OnInit {
+  id: string
+  readonly apiURL : string;
+  titulo : string;
+  descricao: string;
+  areaInteresse: string;
+  interessados: Array<any>;
+  criador: number;
 
-  constructor() { }
+  constructor(route: ActivatedRoute, private ideiaService: IdeiaService, private router: Router) { 
+    this.id = route.snapshot.params.ideiaId;
+    this.apiURL = 'https://plugue.herokuapp.com/';
+    this.titulo = '';
+    this.descricao = '';
+    this.areaInteresse = '';
+    this.interessados = [];
+    this.criador = 0;
+  }
 
   ngOnInit(): void {
+    this.getIdeia();
+  }
+
+  getIdeia() {
+    this.ideiaService.getIdeia(this.id).then(ideia => {
+      const objectArray = Object.entries(ideia);
+      objectArray.forEach(([ key, value ]) => {
+        console.log(key, value)
+        if(key === 'titulo') this.titulo = value;
+        if(key === 'areaInteresse') this.areaInteresse = value;
+        if(key === 'descricao') this.descricao = value;
+        if(key === 'professores') this.interessados = value;
+        if(key === 'aluno') this.criador = value.id;
+      })
+    });
+  }
+
+  deletarIdeia() {
+    this.ideiaService.deletarIdeia(this.id);
+    this.router.navigate(['/repositorio-de-ideias']);
+  }
+
+  atualizarIdeia() {
+    this.router.navigate([`/atualizar-ideia/${this.id}`,  { 
+      titulo: this.titulo, 
+      descricao: this.descricao, 
+      area: this.areaInteresse,
+      criador: this.criador,
+      interessados: this.interessados
+    }]);
   }
 
 }

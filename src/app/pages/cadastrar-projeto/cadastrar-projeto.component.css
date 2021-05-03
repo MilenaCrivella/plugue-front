@@ -1,4 +1,4 @@
-div.atualizarIdeia{
+#projeto {
     width: 90vw;
     height: auto;
     background: #FFFFFF;
@@ -7,7 +7,7 @@ div.atualizarIdeia{
     margin: 10vh;
 }
 
-.label{
+#label{
     position: relative;
     font-family: Lato;
     color: #4F3938;
@@ -25,7 +25,7 @@ label{
     margin-bottom: 14px;
 }
 
-input.tituloIdeia{
+input#titulo{
     display: block;
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid rgba(179, 95, 95, 0.2);
@@ -39,7 +39,7 @@ input.tituloIdeia{
     font-family: Lato;
 }
 
-input.areaInteresse{
+input#areaInteresse{
     display: block;
     margin-top: 35px;
     background: rgba(255, 255, 255, 0.05);
@@ -53,11 +53,11 @@ input.areaInteresse{
     font-family: Lato;
 }
 
-div.areaInteresse {
+div#areaInteresse {
     margin-top: 60px;
 }
 
-textarea.descricaoIdeia{
+textarea#textoDescricao{
     display: block;
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid rgba(179, 95, 95, 0.2);
@@ -71,7 +71,7 @@ textarea.descricaoIdeia{
     font-family: Lato;
 }
 
-.button_salvar{
+#button_salvar{
     background: #B35F5F;
     border: 1.5px solid #B35F5F;
     box-sizing: border-box;
@@ -82,12 +82,12 @@ textarea.descricaoIdeia{
     cursor: pointer;
 }
 
-.button_salvar:hover {
+#button_salvar:hover {
     color: #B35F5F;
     background: #fff;
 }
 
-.button_cancelar{
+#button_cancelar{
     background: #5E8392;;
     border: 1.5px solid #5E8392;;
     box-sizing: border-box;
@@ -99,7 +99,7 @@ textarea.descricaoIdeia{
     cursor: pointer;
 }
 
-.button_cancelar:hover {
+#button_cancelar:hover {
     color: #5E8392;
     background-color: #fff;
 }
