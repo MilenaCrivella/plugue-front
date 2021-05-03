@@ -29,10 +29,10 @@ export class HeaderComponent implements OnInit {
 
   repo(){
     if(this.tipoUsuario == 'aluno'){
-      this.router_env.navigate(['/repositorio-de-ideias', { id: this.idUsuario}]);
+      this.router_env.navigate(['/repositorio-de-ideias', { id: this.idUsuario, tipoUsuario: this.tipoUsuario}]);
     }
     else{
-      this.router_env.navigate(['/repositorio-de-projetos', { id: this.idUsuario}]);
+      this.router_env.navigate(['/repositorio-de-projetos', { id: this.idUsuario, tipoUsuario: this.tipoUsuario}]);
     }  
     console.log(this.idUsuario, this.tipoUsuario)    
   }
