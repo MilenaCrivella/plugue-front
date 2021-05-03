@@ -12,8 +12,8 @@ export class ProjetoService {
     private httpClient: HttpClient
   ) { }
 
-  path: string = 'http://127.0.0.1:8080/projeto';
-  //path: string = 'https://plugue.herokuapp.com/projeto';
+  // path: string = 'http://127.0.0.1:8080/projeto';
+  path: string = 'https://plugue.herokuapp.com/projeto';
   result!: Array<Projeto>
 
   httpOptions = {
