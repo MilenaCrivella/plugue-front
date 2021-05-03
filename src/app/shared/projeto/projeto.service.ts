@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Projeto } from './projeto';
@@ -28,6 +28,17 @@ export class ProjetoService {
   listarProjetos() {
     const headers = this.httpOptions.headers;
     return this.httpClient.get(`${this.path}`, { headers }).toPromise();
+  }
+
+  buscarProjetos(titulo: string, area: string) {
+    const headers = this.httpOptions.headers
+
+    let params = new HttpParams();
+    if (titulo) params = params.append('titulo', titulo);
+    if (area) params = params.append('areaInteresse', area);
+    console.log(params);
+
+    return this.httpClient.get(`${this.path}`, { headers, params }).toPromise()
   }
   
   salvaProjeto(projeto: Projeto): Observable<Projeto> {

@@ -67,7 +67,12 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  busca() {
+  buscaPorParametros() {
+    if (this.isAluno) this.buscaProjetos();
+    if (this.isProfessor) this.buscaIdeias();
+  }
+
+  buscaIdeias() {
     this.ideias = [];
     this.ideiaService.buscarIdeias(this.formularioBusca.get('titulo')?.value,
       this.formularioBusca.get('area')?.value).then(ideias => {
@@ -76,6 +81,18 @@ export class DashboardComponent implements OnInit {
           this.ideias.push(value);
         })
         console.log(this.ideias);
+      });
+  }
+
+  buscaProjetos() {
+    this.projetos = [];
+    this.projetoService.buscarProjetos(this.formularioBusca.get('titulo')?.value,
+      this.formularioBusca.get('area')?.value).then(projetos => {
+        const objectArray = Object.entries(projetos);
+        objectArray.forEach(([key, value]) => {
+          this.projetos.push(value);
+        })
+        console.log(this.projetos)
       });
   }
 
