@@ -4,6 +4,7 @@ import { Aluno } from 'src/app/shared/aluno/aluno';
 import { Professor } from 'src/app/shared/professor/professor';
 import { ProfessorService } from 'src/app/shared/professor/professor.service';
 import { AlunoService } from 'src/app/shared/aluno/aluno.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -29,7 +30,8 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private professorService: ProfessorService,
-    private alunoService: AlunoService
+    private alunoService: AlunoService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -54,7 +56,7 @@ export class CadastroComponent implements OnInit {
     this.alunoService.salvaAluno(this.aluno).subscribe(al => {
       this.returnAluno = new Aluno(al);
       console.log(this.returnAluno);
-    })
+    });
   }
 
   formProfessor() {

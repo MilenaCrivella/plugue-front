@@ -4,6 +4,7 @@ import { Ideia } from 'src/app/shared/ideia/ideia';
 import { IdeiaService } from 'src/app/shared/ideia/ideia.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Projeto } from 'src/app/shared/projeto/projeto';
+import { ProjetoService } from 'src/app/shared/projeto/projeto.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -26,7 +27,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private ideiaService: IdeiaService
+    private ideiaService: IdeiaService,
+    private projetoService: ProjetoService
   ) { }
 
   ngOnInit(): void {
@@ -56,7 +58,13 @@ export class DashboardComponent implements OnInit {
   }
 
   listaProjetos() {
-
+    this.projetoService.listarProjetos().then(projetos => {
+      const objectArray = Object.entries(projetos);
+      objectArray.forEach(([key, value]) => {
+        this.projetos.push(value);
+      })
+      console.log(this.projetos);
+    })
   }
 
   busca() {
@@ -67,7 +75,7 @@ export class DashboardComponent implements OnInit {
         objectArray.forEach(([key, value]) => {
           this.ideias.push(value);
         })
-        console.log(this.ideias)
+        console.log(this.ideias);
       });
   }
 

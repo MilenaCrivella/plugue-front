@@ -38,7 +38,7 @@
 		</ul>
 	</div>
 
-	<!--div id="projetos" *ngIf="isAluno">
+	<div id="projetos" *ngIf="isAluno">
 		<ul>
 			<li *ngFor= "let p of projetos">
 				<div class="card">
@@ -51,11 +51,11 @@
 					</p>
 					<footer>
 						<img src="../../../assets/images/Avatar.png">
-						<h4>{{ p.aluno.nome }}</h4>
+						<h4>{{ p.professor.nome }}</h4>
 						<button id="btn-interest" type="button">Candidatar-se</button>
 					</footer>
 				</div>
 			</li>
 		</ul>
-	</div-->
+	</div>
 </body>
