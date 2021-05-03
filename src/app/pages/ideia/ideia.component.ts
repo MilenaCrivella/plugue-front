@@ -16,6 +16,8 @@ export class IdeiaComponent implements OnInit {
   areaInteresse: string;
   interessados: Array<any>;
   criador: number;
+  idSession: any = '';
+  tipoSession: any = '';
 
   constructor(route: ActivatedRoute, private ideiaService: IdeiaService, private router: Router) { 
     this.id = route.snapshot.params.ideiaId;
@@ -25,6 +27,8 @@ export class IdeiaComponent implements OnInit {
     this.areaInteresse = '';
     this.interessados = [];
     this.criador = 0;
+    this.idSession = sessionStorage.getItem("id");
+    this.tipoSession = sessionStorage.getItem("tipo");
   }
 
   ngOnInit(): void {
@@ -43,11 +47,12 @@ export class IdeiaComponent implements OnInit {
         if(key === 'aluno') this.criador = value.id;
       })
     });
+    console.log('variavel de seção ideia =',this.idSession);
   }
 
   deletarIdeia() {
     this.ideiaService.deletarIdeia(this.id);
-    this.router.navigate(['/repositorio-de-ideias']);
+    this.router.navigate(['/repositorio-de-ideias', { id: this.idSession, tipoUsuario: this.tipoSession}]);
   }
 
   atualizarIdeia() {

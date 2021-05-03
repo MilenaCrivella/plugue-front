@@ -11,42 +11,37 @@ import { dashCaseToCamelCase } from '@angular/compiler/src/util';
 })
 export class HeaderComponent implements OnInit {
 
-  tipoUsuario: any = '';
-  idUsuario: any = '';
+  idSession: any = '';
+  tipoSession: any = '';
 
   constructor(
     private usuarioService: UsuarioService,
     private route_rec: ActivatedRoute,
     private router_env: Router
-  ) { }
+  ) {
+    this.idSession = sessionStorage.getItem("id");
+    this.tipoSession = sessionStorage.getItem("tipo");
+   }
 
   usuario!: Usuario;
 
-  ngOnInit(): void {
-    this.idUsuario = this.route_rec.snapshot.paramMap.get('id');
-    this.tipoUsuario = this.route_rec.snapshot.paramMap.get('tipoUsuario');
-  }
+  ngOnInit(): void {}
 
   repo(){
-    if(this.tipoUsuario == 'aluno'){
-      this.router_env.navigate(['/repositorio-de-ideias', { id: this.idUsuario, tipoUsuario: this.tipoUsuario}]);
+    if(this.tipoSession == 'aluno'){
+      this.router_env.navigate(['/repositorio-de-ideias', { id: this.idSession, tipoUsuario: this.tipoSession}]);
     }
     else{
-      this.router_env.navigate(['/repositorio-de-projetos', { id: this.idUsuario, tipoUsuario: this.tipoUsuario}]);
+      this.router_env.navigate(['/repositorio-de-projetos', { id: this.idSession, tipoUsuario: this.tipoSession}]);
     }  
-    console.log(this.idUsuario, this.tipoUsuario)    
   }
 
   dash(){
-    if(this.tipoUsuario == 'aluno'){
-      this.router_env.navigate(['/home', { id: this.idUsuario, tipoUsuario: this.tipoUsuario}]);
+    if(this.tipoSession == 'aluno'){
+      this.router_env.navigate(['/home', { id: this.idSession, tipoUsuario: this.tipoSession}]);
     }
     else{
-      this.router_env.navigate(['/home', { id: this.idUsuario, tipoUsuario: this.tipoUsuario}]);
+      this.router_env.navigate(['/home', { id: this.idSession, tipoUsuario: this.tipoSession}]);
     } 
-    console.log(this.idUsuario, this.tipoUsuario) 
   }
-
-  
-
 }

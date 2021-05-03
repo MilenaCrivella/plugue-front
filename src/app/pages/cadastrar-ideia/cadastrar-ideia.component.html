@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="cadastrarIdeia">
     <div class="label">
         <h1>Nova Ideia</h1>
@@ -10,13 +11,7 @@
 
         <div class="areaInteresse">
             <label for="areaInteresse">Áreas de interesse</label>
-            <select class="areaInteresse" formControlName="areaInteresse">
-                <option value="" data-default disabled selected></option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-            </select>
+            <input type="text" class="areaInteresse" id="areaInteresse" formControlName="areaInteresse"/>
         </div>
 
         <div class="descricaoIdeia">

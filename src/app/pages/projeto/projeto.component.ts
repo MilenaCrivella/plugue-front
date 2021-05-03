@@ -14,6 +14,8 @@ export class ProjetoComponent implements OnInit {
   interessados: Array<any>
   titulo: String
   criador: number
+  idSession: any = '';
+  tipoSession: any = '';
 
   constructor(route: ActivatedRoute, private projetoService: ProjetoService, private router: Router) {
     this.id = route.snapshot.params.projetoId;
@@ -22,6 +24,8 @@ export class ProjetoComponent implements OnInit {
     this.interessados =  []
     this.titulo = "titulo"
     this.criador = 0
+    this.idSession = sessionStorage.getItem("id");
+    this.tipoSession = sessionStorage.getItem("tipo");
   }
 
   ngOnInit(): void {
@@ -44,7 +48,7 @@ export class ProjetoComponent implements OnInit {
 
   deletarProjeto() {
     this.projetoService.deletarProjeto(this.id);
-    this.router.navigate(['/repositorio-de-ideias']);
+    this.router.navigate(['/repositorio-de-projetos', { id: this.idSession, tipoUsuario: this.tipoSession}]);
   }
 
   atualizarProjeto() {

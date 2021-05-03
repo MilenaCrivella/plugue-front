@@ -11,7 +11,8 @@ export class RepositorioDeProjetosComponent implements OnInit {
   readonly apiURL : string;
   result : Array<any>;
   resultInteresse : Array<any>;
-  idUsuario: any = '';
+  idSession: any = '';
+  tipoSession: any = '';
 
   constructor(
     private http : HttpClient,
@@ -21,11 +22,12 @@ export class RepositorioDeProjetosComponent implements OnInit {
     this.apiURL = `https://plugue.herokuapp.com`;
     this.result = [];
     this.resultInteresse = [];
-    
+    this.idSession = sessionStorage.getItem("id");
+    this.tipoSession = sessionStorage.getItem("tipo");
   }
 
   ngOnInit(): void { 
-    this.idUsuario = this.route_rec.snapshot.paramMap.get('id');   
+    this.idSession = this.route_rec.snapshot.paramMap.get('id');   
     this.listProjetos();
     this.listInteresse();
   }
@@ -38,7 +40,7 @@ export class RepositorioDeProjetosComponent implements OnInit {
       "Content-Type": "application/json"
     });
 
-    return this.http.get(`${this.apiURL}/projeto?id=${this.idUsuario}`, { headers }).toPromise().then(projetos => {
+    return this.http.get(`${this.apiURL}/projeto?id=${this.idSession}`, { headers }).toPromise().then(projetos => {
       const objectArray = Object.entries(projetos);
       objectArray.forEach(([ key, value ]) => {
         this.result.push(value);
@@ -54,7 +56,7 @@ export class RepositorioDeProjetosComponent implements OnInit {
       "Content-Type": "application/json"
     });
 
-    return this.http.get(`${this.apiURL}/professor/${this.idUsuario}/ideias`, { headers }).toPromise().then(projetos => {
+    return this.http.get(`${this.apiURL}/professor/${this.idSession}/ideias`, { headers }).toPromise().then(projetos => {
       const objectArray = Object.entries(projetos);
       objectArray.forEach(([ key, value ]) => {
         this.resultInteresse.push(value);
@@ -63,7 +65,7 @@ export class RepositorioDeProjetosComponent implements OnInit {
   }
 
   addProjeto(){
-    this.router_env.navigate(['/cadastrar-projeto', { id: this.idUsuario}])
+    this.router_env.navigate(['/cadastrar-projeto', { id: this.idSession}])
   }
 
 }

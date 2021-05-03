@@ -103,3 +103,17 @@ textarea.descricaoIdeia{
     border-radius: 6px;
     color: #faf9f9;
 }
+
+input#areaInteresse{
+    display: block;
+    margin-top: 35px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(179, 95, 95, 0.2);
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: #4F3938;
+    width: 540px;
+    height: 8vh;
+    padding-left: 15px;
+    font-family: Lato;
+}

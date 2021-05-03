@@ -12,7 +12,8 @@ export class RepositorioDeIdeiasComponent implements OnInit {
   readonly apiURL : string;
   result : Array<any>;
   resultInteresse : Array<any>;
-  idUsuario: any = '';
+  idSession: any = '';
+  tipoSession: any = '';
 
   constructor(
     private http : HttpClient,
@@ -22,10 +23,11 @@ export class RepositorioDeIdeiasComponent implements OnInit {
     this.apiURL = 'https://plugue.herokuapp.com/';
     this.result = [];
     this.resultInteresse = [];
+    this.idSession = sessionStorage.getItem("id");
+    this.tipoSession = sessionStorage.getItem("tipo");
   }
 
   ngOnInit(): void {
-    this.idUsuario = this.route_rec.snapshot.paramMap.get('id');
     this.listIdeas();
     this.listInteresse();
   }
@@ -38,7 +40,7 @@ export class RepositorioDeIdeiasComponent implements OnInit {
       "Content-Type": "application/json"
     });
 
-    return this.http.get(`${this.apiURL}/ideia?id=${this.idUsuario}`, { headers }).toPromise().then(ideias => {
+    return this.http.get(`${this.apiURL}/ideia?id=${this.idSession}`, { headers }).toPromise().then(ideias => {
       const objectArray = Object.entries(ideias);
       objectArray.forEach(([ key, value ]) => {
         this.result.push(value);
@@ -55,7 +57,7 @@ export class RepositorioDeIdeiasComponent implements OnInit {
       "Content-Type": "application/json"
     });
 
-    return this.http.get(`${this.apiURL}/aluno/${this.idUsuario}/projetos`, { headers }).toPromise().then(ideias => {
+    return this.http.get(`${this.apiURL}/aluno/${this.idSession}/projetos`, { headers }).toPromise().then(ideias => {
       const objectArray = Object.entries(ideias);
       objectArray.forEach(([ key, value ]) => {
         this.resultInteresse.push(value);
@@ -64,6 +66,6 @@ export class RepositorioDeIdeiasComponent implements OnInit {
   }
 
   addProjeto(){
-    this.router_env.navigate(['/cadastrar-ideia', { id: this.idUsuario}])
+    this.router_env.navigate(['/cadastrar-ideia', { id: this.idSession}])
   }
 }

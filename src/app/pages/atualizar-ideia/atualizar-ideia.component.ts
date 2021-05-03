@@ -17,6 +17,8 @@ export class AtualizarIdeiaComponent implements OnInit {
   professores: Array<any>;
   ideia: Ideia = new Ideia();
   aluno: Aluno = new Aluno();
+  idSession: any = '';
+  tipoSession: any = '';
 
   constructor(route: ActivatedRoute,private ideiaService: IdeiaService, private router: Router) {
     this.id = route.snapshot.params.ideiaId;
@@ -25,7 +27,8 @@ export class AtualizarIdeiaComponent implements OnInit {
     this.area = route.snapshot.params.area;
     this.aluno.id = route.snapshot.params.criador;
     this.professores = route.snapshot.params.interessados || []
-
+    this.idSession = sessionStorage.getItem("id");
+    this.tipoSession = sessionStorage.getItem("tipo");
   }
 
   ngOnInit(): void {
@@ -33,12 +36,12 @@ export class AtualizarIdeiaComponent implements OnInit {
 
   atualizarIdeia() {
     this.ideia.titulo = (document.getElementById('tituloIdeia') as HTMLInputElement).value;
-    this.ideia.descricao = (document.getElementById('areaInteresse') as HTMLInputElement).value;
-    this.ideia.areaInteresse = (document.getElementById('descricaoIdeia') as HTMLInputElement).value;
+    this.ideia.descricao = (document.getElementById('descricaoIdeia') as HTMLInputElement).value;
+    this.ideia.areaInteresse = (document.getElementById('areaInteresse') as HTMLInputElement).value;
     this.ideia.professores = this.professores;
     this.ideia.aluno = this.aluno;
 
     this.ideiaService.atualizarIdeia(this.id, this.ideia);
-    this.router.navigate(['/repositorio-de-ideias']);
+    this.router.navigate(['/repositorio-de-ideias', { id: this.idSession, tipoUsuario: this.tipoSession}]);
   }
 }

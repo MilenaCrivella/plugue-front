@@ -17,6 +17,8 @@ export class AtualizarProjetoComponent implements OnInit {
   alunos: Array<any>;
   projeto: Projeto = new Projeto();
   professor: Professor = new Professor();
+  idSession: any = '';
+  tipoSession: any = '';
 
   constructor(route: ActivatedRoute, private projetoService: ProjetoService, private router: Router) {
     this.id = route.snapshot.params.projetoId;
@@ -25,7 +27,8 @@ export class AtualizarProjetoComponent implements OnInit {
     this.area = route.snapshot.params.area;
     this.professor.id = route.snapshot.params.criador;
     this.alunos = route.snapshot.params.interessados || []
-
+    this.idSession = sessionStorage.getItem("id");
+    this.tipoSession = sessionStorage.getItem("tipo");
   }
 
   ngOnInit(): void {
@@ -39,7 +42,7 @@ export class AtualizarProjetoComponent implements OnInit {
     this.projeto.professor = this.professor;
 
     this.projetoService.atualizarProjeto(this.id, this.projeto);
-    this.router.navigate(['/repositorio-de-ideias']);
+    this.router.navigate(['/repositorio-de-projetos', { id: this.idSession, tipoUsuario: this.tipoSession}]);
   }
 
 }
