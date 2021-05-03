@@ -12,7 +12,8 @@ export class ProfessorService {
     private httpClient: HttpClient
   ) { }
 
-  path: string = 'http://127.0.0.1:8080/professor';
+  //path: string = 'http://127.0.0.1:8080/professor';
+  path: string = 'https://plugue.herokuapp.com/professor';
 
   //Headers
   httpOptions = { headers: new HttpHeaders({ "Access-Control-Allow-Origin": "*",

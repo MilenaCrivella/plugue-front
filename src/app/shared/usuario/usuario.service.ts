@@ -11,7 +11,8 @@ export class UsuarioService {
     private httpClient: HttpClient
   ) { }
 
-  path: string = 'http://127.0.0.1:8080/usuario';
+  //path: string = 'http://127.0.0.1:8080/usuario';
+  path: string = 'https://plugue.herokuapp.com/usuario';
 
   fazerLogin(login: string, senha: string) {
   //Headers
