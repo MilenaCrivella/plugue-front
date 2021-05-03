@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-repositorio-de-projetos',
@@ -10,19 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 export class RepositorioDeProjetosComponent implements OnInit {
   readonly apiURL : string;
   result : Array<any>;
+  resultInteresse : Array<any>;
   idUsuario: any = '';
 
   constructor(
     private http : HttpClient,
-    private route_rec: ActivatedRoute
+    private route_rec: ActivatedRoute,
+    private router_env: Router
     ) {
-    this.idUsuario = this.route_rec.snapshot.paramMap.get('id');
     this.apiURL = `https://plugue.herokuapp.com`;
     this.result = [];
+    this.resultInteresse = [];
     
   }
 
-  ngOnInit(): void {    
+  ngOnInit(): void { 
+    this.idUsuario = this.route_rec.snapshot.paramMap.get('id');   
     this.listProjetos();
     this.listInteresse();
   }
@@ -40,7 +43,6 @@ export class RepositorioDeProjetosComponent implements OnInit {
       objectArray.forEach(([ key, value ]) => {
         this.result.push(value);
       })
-      console.log(this.result)
     });
   }
 
@@ -55,9 +57,13 @@ export class RepositorioDeProjetosComponent implements OnInit {
     return this.http.get(`${this.apiURL}/professor/${this.idUsuario}/ideias`, { headers }).toPromise().then(projetos => {
       const objectArray = Object.entries(projetos);
       objectArray.forEach(([ key, value ]) => {
-        this.result.push(value);
+        this.resultInteresse.push(value);
       })
-      console.log(this.result)
     });
   }
+
+  addProjeto(){
+    this.router_env.navigate(['/cadastrar-projeto', { id: this.idUsuario}])
+  }
+
 }

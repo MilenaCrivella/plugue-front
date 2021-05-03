@@ -2,7 +2,7 @@
 <div class="repo_projetos">
     <div class="titulo">
         <h1 class="titulo">Repositório de projetos</h1>
-        <button class="add_projeto" type="submit" onclick="location.href='../cadastrar-projeto/'">+ &nbsp;&nbsp;&nbsp; Adicionar projeto</button>
+        <button class="add_projeto" type="submit" (click)="addProjeto()">+ &nbsp;&nbsp;&nbsp; Adicionar projeto</button>
     </div>
     
 
@@ -24,7 +24,7 @@
 
     <div class="ideia_interesse">
         <ul>
-            <li *ngFor="let res of result">                
+            <li *ngFor="let res of resultInteresse">                
                 <div class="card">
                     <header>
                         <h1 class="card-title">{{ res.titulo }}</h1>                            
