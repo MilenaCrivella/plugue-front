@@ -57,7 +57,7 @@ export class CadastroComponent implements OnInit {
       this.returnAluno = new Aluno(al);
       console.log(this.returnAluno);
       if(this.returnAluno!=null){
-        this.router.navigate(['/home', { id: this.aluno.id, tipoUsuario: this.aluno.tipoUsuario}])
+        this.router.navigate(['/home', { id: al.id, tipoUsuario: this.aluno.tipoUsuario}])
       }
     })
   }
@@ -73,7 +73,7 @@ export class CadastroComponent implements OnInit {
       this.returnProf = new Professor(prof);
       console.log(this.returnProf);
       if(this.returnProf!=null){
-        this.router.navigate(['/home', { id: this.professor.id, tipoUsuario: this.professor.tipoUsuario}])
+        this.router.navigate(['/home', { id: prof.id, tipoUsuario: this.professor.tipoUsuario}])
       }
     });
   }
