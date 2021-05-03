@@ -1,4 +1,4 @@
-.repo_ideias{    
+.repo_projetos{    
     position: relative;
     top: -25px;
     background: rgba(179, 95, 95, 0.05);
@@ -22,7 +22,7 @@ h1.titulo{
     font-weight: bolder;
 }
 
-.add_ideia{
+.add_projeto{
     position: relative;
     width: 250.07px;
     height: 46.54px;
@@ -46,7 +46,7 @@ h2{
     padding-top: 60px;
 }
 
-div.minha_ideia{
+div.meu_projeto{
     width: 100%;
     height: auto;    
     text-align:center;    

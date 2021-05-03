@@ -42,7 +42,6 @@ export class ProjetoService {
   }
   
   salvaProjeto(projeto: Projeto): Observable<Projeto> {
-    console.log(projeto)
     return this.httpClient.post<Projeto>(this.path, projeto, this.httpOptions);
   }
 

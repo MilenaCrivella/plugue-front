@@ -12,7 +12,7 @@ export class AlunoService {
     private httpClient: HttpClient
   ) { }
 
-  // path: string = 'http://127.0.0.1:8080/aluno';
+  //path: string = 'http://127.0.0.1:8080/aluno';
   path: string = 'https://plugue.herokuapp.com/aluno';
 
   //Headers

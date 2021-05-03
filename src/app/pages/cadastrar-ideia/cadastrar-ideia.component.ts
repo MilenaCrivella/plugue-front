@@ -4,6 +4,7 @@ import { Aluno } from 'src/app/shared/aluno/aluno';
 import { Professor } from 'src/app/shared/professor/professor';
 import { Ideia } from 'src/app/shared/ideia/ideia';
 import { IdeiaService } from 'src/app/shared/ideia/ideia.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-ideia',
@@ -17,9 +18,7 @@ export class CadastrarIdeiaComponent implements OnInit {
   aluno: Aluno = new Aluno();
   professor: Professor = new Professor()
   returnIdeia: Ideia = new Ideia();
-
-
-  
+  idUsuario: any = '';  
 
   formulario = new FormGroup({
     tituloIdeia: new FormControl(''),
@@ -28,8 +27,11 @@ export class CadastrarIdeiaComponent implements OnInit {
   });
 
   constructor(
-    private ideiaService: IdeiaService
-  ) { }
+    private ideiaService: IdeiaService,
+    private route_rec: ActivatedRoute
+  ) {
+    this.idUsuario = this.route_rec.snapshot.paramMap.get('id');
+   }
 
   ngOnInit(): void {}
 
@@ -39,7 +41,7 @@ export class CadastrarIdeiaComponent implements OnInit {
 
   formIdeia() {
 
-    this.aluno.id = 37
+    this.aluno.id = this.idUsuario;
     this.ideia.titulo = this.formulario.get("tituloIdeia")?.value;
     this.ideia.areaInteresse = this.formulario.get("areaInteresse")?.value;
     this.ideia.descricao = this.formulario.get("descricaoIdeia")?.value;

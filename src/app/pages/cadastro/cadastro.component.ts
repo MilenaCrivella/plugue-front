@@ -56,7 +56,10 @@ export class CadastroComponent implements OnInit {
     this.alunoService.salvaAluno(this.aluno).subscribe(al => {
       this.returnAluno = new Aluno(al);
       console.log(this.returnAluno);
-    });
+      if(this.returnAluno!=null){
+        this.router.navigate(['/home', { id: this.aluno.id, tipoUsuario: this.aluno.tipoUsuario}])
+      }
+    })
   }
 
   formProfessor() {
@@ -69,6 +72,9 @@ export class CadastroComponent implements OnInit {
     this.professorService.salvaProfessor(this.professor).subscribe(prof => {
       this.returnProf = new Professor(prof);
       console.log(this.returnProf);
+      if(this.returnProf!=null){
+        this.router.navigate(['/home', { id: this.professor.id, tipoUsuario: this.professor.tipoUsuario}])
+      }
     });
   }
 
