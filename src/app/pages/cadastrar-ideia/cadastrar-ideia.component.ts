@@ -4,7 +4,7 @@ import { Aluno } from 'src/app/shared/aluno/aluno';
 import { Professor } from 'src/app/shared/professor/professor';
 import { Ideia } from 'src/app/shared/ideia/ideia';
 import { IdeiaService } from 'src/app/shared/ideia/ideia.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-ideia',
@@ -28,19 +28,19 @@ export class CadastrarIdeiaComponent implements OnInit {
 
   constructor(
     private ideiaService: IdeiaService,
-    private route_rec: ActivatedRoute
-  ) {
-    this.idUsuario = this.route_rec.snapshot.paramMap.get('id');
-   }
+    private route_rec: ActivatedRoute,
+    private router_env: Router
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.idUsuario = this.route_rec.snapshot.paramMap.get('id');
+  }
 
   onSubmit() {
     this.formIdeia();
   }
 
   formIdeia() {
-
     this.aluno.id = this.idUsuario;
     this.ideia.titulo = this.formulario.get("tituloIdeia")?.value;
     this.ideia.areaInteresse = this.formulario.get("areaInteresse")?.value;
@@ -50,6 +50,7 @@ export class CadastrarIdeiaComponent implements OnInit {
     console.log(this.aluno)
     this.ideiaService.salvaIdeia(this.ideia).subscribe(ideia => {
       this.returnIdeia = new Ideia(ideia);
+      this.router_env.navigate([`/ideia/${ideia.id}`])
       console.log(this.returnIdeia);
     });
   }
