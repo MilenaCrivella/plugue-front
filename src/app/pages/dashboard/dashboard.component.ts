@@ -81,14 +81,14 @@ export class DashboardComponent implements OnInit {
 
   buscaIdeias() {
     this.ideias = [];
-    this.ideiaService.buscarIdeias(this.formularioBusca.get('titulo')?.value,
-      this.formularioBusca.get('area')?.value).then(ideias => {
-        const objectArray = Object.entries(ideias);
-        objectArray.forEach(([key, value]) => {
-          this.ideias.push(value);
-        })
-        console.log(this.ideias);
-      });
+    // this.ideiaService.buscarIdeias(this.formularioBusca.get('titulo')?.value,
+    //   this.formularioBusca.get('area')?.value).then(ideias => {
+    //     const objectArray = Object.entries(ideias);
+    //     objectArray.forEach(([key, value]) => {
+    //       this.ideias.push(value);
+    //     })
+    //     console.log(this.ideias);
+    //   });
   }
 
   buscaProjetos() {
